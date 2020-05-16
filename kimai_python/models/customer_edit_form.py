@@ -47,7 +47,9 @@ class CustomerEditForm(object):
         'homepage': 'str',
         'timezone': 'str',
         'color': 'str',
-        'visible': 'bool'
+        'visible': 'bool',
+        'budget': 'str',
+        'timeBudget': 'str'
     }
 
     attribute_map = {
@@ -67,10 +69,12 @@ class CustomerEditForm(object):
         'homepage': 'homepage',
         'timezone': 'timezone',
         'color': 'color',
-        'visible': 'visible'
+        'visible': 'visible',
+        'budget': 'budget',
+        'timeBudget': 'timeBudget'
     }
 
-    def __init__(self, name=None, number=None, comment=None, company=None, vat_id=None, contact=None, address=None, country=None, currency=None, phone=None, fax=None, mobile=None, email=None, homepage=None, timezone=None, color=None, visible=None):  # noqa: E501
+    def __init__(self, name=None, number=None, comment=None, company=None, vat_id=None, contact=None, address=None, country=None, currency=None, phone=None, fax=None, mobile=None, email=None, homepage=None, timezone=None, color=None, visible=None, budget=None, timeBudget=None):  # noqa: E501
         """CustomerEditForm - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -90,6 +94,8 @@ class CustomerEditForm(object):
         self._timezone = None
         self._color = None
         self._visible = None
+        self._budget = None
+        self._timeBudget = None
         self.discriminator = None
 
         self.name = name
@@ -119,6 +125,8 @@ class CustomerEditForm(object):
             self.homepage = homepage
         self.timezone = timezone
         self.color = color
+        self.budget = budget
+        self.timeBudget = timeBudget
         if visible is not None:
             self.visible = visible
 
@@ -444,6 +452,52 @@ class CustomerEditForm(object):
             raise ValueError("Invalid value for `timezone`, must not be `None`")  # noqa: E501
 
         self._timezone = timezone
+
+    @property
+    def budget(self):
+        """Gets the budget of this CustomerEditForm.  # noqa: E501
+
+
+        :return: The budget of this CustomerEditForm.  # noqa: E501
+        :rtype: str
+        """
+        return self._budget
+
+    @budget.setter
+    def budget(self, budget):
+        """Sets the budget of this CustomerEditForm.
+
+
+        :param budget: The budget of this CustomerEditForm.  # noqa: E501
+        :type: str
+        """
+        if budget is None:
+            raise ValueError("Invalid value for `budget`, must not be `None`")  # noqa: E501
+
+        self._budget = budget
+
+    @property
+    def timeBudget(self):
+        """Gets the timeBudget of this CustomerEditForm.  # noqa: E501
+
+
+        :return: The timeBudget of this CustomerEditForm.  # noqa: E501
+        :rtype: str
+        """
+        return self._timeBudget
+
+    @timeBudget.setter
+    def timeBudget(self, timeBudget):
+        """Sets the timeBudget of this CustomerEditForm.
+
+
+        :param timeBudget: The timeBudget of this CustomerEditForm.  # noqa: E501
+        :type: str
+        """
+        if timeBudget is None:
+            raise ValueError("Invalid value for `timeBudget`, must not be `None`")  # noqa: E501
+
+        self._timeBudget = timeBudget
 
     @property
     def color(self):
